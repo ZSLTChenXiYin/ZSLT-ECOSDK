@@ -363,7 +363,7 @@ func (x *IDLoginRequest) GetPassword() string {
 
 type IDLoginReply struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
+	Username      string                 `protobuf:"bytes,1,opt,name=username,proto3" json:"username,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -398,11 +398,11 @@ func (*IDLoginReply) Descriptor() ([]byte, []int) {
 	return file_api_user_v1_User_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *IDLoginReply) GetSuccess() bool {
+func (x *IDLoginReply) GetUsername() string {
 	if x != nil {
-		return x.Success
+		return x.Username
 	}
-	return false
+	return ""
 }
 
 type GetEmailRequest struct {
@@ -899,9 +899,9 @@ const file_api_user_v1_User_proto_rawDesc = "" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\"E\n" +
 	"\x0eIDLoginRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x04R\x06userId\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\"(\n" +
-	"\fIDLoginReply\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\"*\n" +
+	"\bpassword\x18\x02 \x01(\tR\bpassword\"*\n" +
+	"\fIDLoginReply\x12\x1a\n" +
+	"\busername\x18\x01 \x01(\tR\busername\"*\n" +
 	"\x0fGetEmailRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x04R\x06userId\"%\n" +
 	"\rGetEmailReply\x12\x14\n" +
